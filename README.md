@@ -2,7 +2,7 @@
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
 
-### Project taken from the course [NestJS: desarrollo backend escalable](https://nestjs.com/) by Fernando Herrera
+### Project taken from the course [NestJS: desarrollo backend escalable](https://fernando-herrera.com/course/nest-backend-escalable) by Fernando Herrera
 
 ## For development mode:
 1. Clone the repository
