@@ -18,6 +18,15 @@ npm i -g @nestjs/cli
 ```
 docker-compose up -d
 ```
+5. Run the project
+```
+npm run start:dev
+```
+6. Request to SEED endpoint to populate the database
+```
+GET http://localhost:3000/api/seed
+```
+
 ### stack usado
 - Mongodb
 - NestJS
