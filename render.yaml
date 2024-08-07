@@ -3,7 +3,7 @@ services:
     name: pokedexapp
     env: docker
     dockerfilePath: Dockerfile
-    buildCommand: "docker-compose -f docker-compose.prod.yaml build"
+    buildCommand: ""
     startCommand: ""
     envVars:
       - key: MONGODB_URI
@@ -16,10 +16,10 @@ services:
       - name: http
         port: ${PORT}
     dependsOn:
-      - name: mongo-poke
+      - name: db
 
   - type: database
-    name: mongo-poke
+    name: db
     databaseName: nest-pokemon
     image: mongo:5
     volumes:

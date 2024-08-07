@@ -14,7 +14,9 @@ import { JoiValidationSchema } from './config/joi.schema';
       load: [EnvConfig],
       validationSchema: JoiValidationSchema
     }),
-    MongooseModule.forRoot(process.env.MONGODB_URI),
+    MongooseModule.forRoot(process.env.MONGODB_URI, {
+      directConnection: true,
+    }),
     PokemonModule,
     CommonModule,
     SeedModule],
