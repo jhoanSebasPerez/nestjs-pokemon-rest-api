@@ -6,7 +6,7 @@
 # mongodb data directory mapped to /data/db in container
 /mongo
 
-.env.prod
+.env
 
 # Logs
 logs

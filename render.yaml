@@ -4,8 +4,8 @@ services:
     env: docker
     plan: free
     dockerfilePath: Dockerfile
-    buildCommand: "docker-compose -f docker-compose.prod.yaml --env-file .env.prod up --build"
-    startCommand: "docker-compose -f docker-compose.prod.yaml --env-file .env.prod up"
+    buildCommand: "docker-compose -f docker-compose.prod.yaml up --build"
+    startCommand: "docker-compose -f docker-compose.prod.yaml up"
     envVars:
       - key: MONGODB_URI
         value: ${MONGODB_URI}
