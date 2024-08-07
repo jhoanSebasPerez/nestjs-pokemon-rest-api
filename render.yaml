@@ -16,11 +16,12 @@ services:
       - name: http
         port: ${PORT}
     dependsOn:
-      - name: db
+      - name: mongo-db
 
-  - type: database
-    name: db
-    databaseName: nest-pokemon
+  - type: service
+    name: mongo-db
+    env: docker
+    dockerfilePath: ""
     image: mongo:5
     volumes:
       - path: /data/db
