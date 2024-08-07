@@ -3,7 +3,7 @@ services:
     name: pokedexapp
     env: docker
     dockerfilePath: Dockerfile
-    buildCommand: ""
+    buildCommand: "docker-compose -f docker-compose.prod.yaml build"
     startCommand: ""
     envVars:
       - key: MONGODB_URI
