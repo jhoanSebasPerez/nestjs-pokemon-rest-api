@@ -12,6 +12,8 @@ services:
     restart: always # reiniciar el contenedor si se detiene
     ports:
       - "${PORT}:${PORT}"
+    networks:
+      - pokedex-network
     # working_dir: /var/www/pokedex
     environment:
       MONGODB_URI: ${MONGODB_URI}
@@ -26,7 +28,13 @@ services:
     restart: always
     ports:
       - 27017:27017
+    networks:
+      - pokedex-network
     environment:
       MONGODB_DATABASE: nest-pokemon
     volumes:
       - ./mongo:/data/db
+
+networks:
+  pokedex-network:
+    driver: bridge
