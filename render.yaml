@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: pokedexapp
+    env: docker
+    plan: free
+    dockerfilePath: Dockerfile
+    buildCommand: ""
+    startCommand: "npm start"
+    envVars:
+      - key: MONGODB_URI
+        value: ${MONGODB_URI}
+      - key: PORT
+        value: ${PORT}
+      - key: DEFAULT_LIMIT
+        value: ${DEFAULT_LIMIT}
+    ports:
+      - port: ${PORT}
