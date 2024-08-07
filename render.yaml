@@ -2,10 +2,9 @@ services:
   - type: web
     name: pokedexapp
     env: docker
-    plan: free
     dockerfilePath: Dockerfile
-    buildCommand: "docker-compose -f docker-compose.prod.yaml up --build"
-    startCommand: "docker-compose -f docker-compose.prod.yaml up"
+    buildCommand: ""
+    startCommand: ""
     envVars:
       - key: MONGODB_URI
         value: ${MONGODB_URI}
@@ -14,4 +13,21 @@ services:
       - key: DEFAULT_LIMIT
         value: ${DEFAULT_LIMIT}
     ports:
-      - port: ${PORT}
+      - name: http
+        port: ${PORT}
+    dependsOn:
+      - name: mongo-poke
+
+  - type: database
+    name: mongo-poke
+    databaseName: nest-pokemon
+    image: mongo:5
+    volumes:
+      - path: /data/db
+        name: mongo-data
+    envVars:
+      - key: MONGODB_DATABASE
+        value: nest-pokemon
+    ports:
+      - name: mongo
+        port: 27017
